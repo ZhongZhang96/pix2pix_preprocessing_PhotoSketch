@@ -5,7 +5,7 @@ batchSize: 1
 checkpoints_dir: Exp/PhotoSketch/Checkpoints/
 color_jitter: False
 crop: False
-dataroot: D:/AI/Deecamp/GAN/data/my_test/resized/
+dataroot: D:/AI/Deecamp/GAN/data/pokemon/resized/
 dataset_mode: test_dir
 display_id: 1
 display_port: 8097
@@ -41,7 +41,7 @@ phase: test
 pretrain_path: 
 render_dir: sketch-rendered
 resize_or_crop: resize_and_crop
-results_dir: D:/AI/Deecamp/GAN/data/my_test/Sketch/
+results_dir: D:/AI/Deecamp/GAN/data/pokemon/Sketch/
 rot_int_max: 3
 rotate: False
 serial_batches: False

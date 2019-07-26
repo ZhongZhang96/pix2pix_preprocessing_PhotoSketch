@@ -1,4 +1,4 @@
-dataDir=D:/AI/Deecamp/GAN/data/my_test
+dataDir=
 
 source activate tf1
 
