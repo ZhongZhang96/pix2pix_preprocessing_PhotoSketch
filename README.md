@@ -1,0 +1,5 @@
+# pix2pix_preporcessing_PhotoSketch
+
+生成图片的sketch并与原图组合
+
+自用版本，更改data_preprocessing.sh文件内容并运行
