@@ -5,6 +5,7 @@ source activate tf1
 python process.py \
     --input_dir ${dataDir}/original \
     --operation resize \
+    --pad white \
     --output_dir ${dataDir}/resized
 
 conda deactivate

@@ -23,23 +23,26 @@ parser.add_argument("--output_dir", required=True, help="output path")
 parser.add_argument("--operation", required=True, choices=["grayscale", "resize", "blank", "combine", "edges"])
 parser.add_argument("--workers", type=int, default=1, help="number of workers")
 # resize
-parser.add_argument("--pad", action="store_true", help="pad instead of crop for resize operation")
+parser.add_argument("--pad", help="pad instead of crop for resize operation", choices=["black", "white"])
 parser.add_argument("--size", type=int, default=256, help="size to use for resize operation")
 # combine
 parser.add_argument("--b_dir", type=str, help="path to folder containing B images for combine operation")
 a = parser.parse_args()
-
 
 def resize(src):
     height, width, _ = src.shape
     dst = src
     if height != width:
         if a.pad:
-            size = max(height, width)
-            # pad to correct ratio
-            oh = (size - height) // 2
-            ow = (size - width) // 2
-            dst = im.pad(image=dst, offset_height=oh, offset_width=ow, target_height=size, target_width=size)
+                size = max(height, width)
+                # # pad to correct ratio
+                oh = (size - height) // 2
+                ow = (size - width) // 2
+                if a.pad=="black":
+                    dst = im.pad(image=dst, offset_height=oh, offset_width=ow, target_height=size, target_width=size)
+                elif a.pad=="white":
+                    dst = np.ones([size, size, 3])
+                    dst[oh:oh+height, ow:ow+width, :] = src
         else:
             # crop to correct ratio
             size = min(height, width)
