@@ -42,7 +42,7 @@ def resize(src):
                     dst = im.pad(image=dst, offset_height=oh, offset_width=ow, target_height=size, target_width=size)
                 elif a.pad=="white":
                     dst = np.ones([size, size, 3])
-                    dst[oh:oh+height, ow:ow+width, :] = src
+                    dst[oh:oh+height, ow:ow+width, :] = src[:, :, :3]
         else:
             # crop to correct ratio
             size = min(height, width)

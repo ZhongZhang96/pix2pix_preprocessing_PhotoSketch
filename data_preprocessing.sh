@@ -1,6 +1,10 @@
-dataDir=
+dataDir= # YOUR_DIRECTORY
+pix2pix_env=tf1 # Yor Pixel2Pixel environment name
+PhotoSketch_env=sketch # Your PhotoSketch environment name
 
-source activate tf1
+python rename.py --image_dir ${dataDir}
+
+source activate ${pix2pix_env}
 
 python process.py \
     --input_dir ${dataDir}/original \
@@ -9,7 +13,7 @@ python process.py \
     --output_dir ${dataDir}/resized
 
 conda deactivate
-source activate sketch
+source activate ${PhotoSketch_env}
 
 python test_pretrained.py \
     --name pretrained \
@@ -26,7 +30,7 @@ python test_pretrained.py \
     --no_dropout \
 
 conda deactivate
-source activate tf1
+source activate ${pix2pix_env}
 
 python process.py \
      --input_dir ${dataDir}/Sketch \
