@@ -3,7 +3,7 @@
 ## 准备工作
 1. 一个可以运行Pixel2Pixel的conda环境，要求见https://github.com/affinelayer/pix2pix-tensorflow
 
-2. 一个可以运行PhotoSketch的conda环境，要求见https://github.com/mtli/PhotoSketch/blob/master/README.md, 或运行`conda env create -f PhotoSketch_environment.yml` 自动安装
+2. 一个可以运行PhotoSketch的conda环境，要求见https://github.com/mtli/PhotoSketch, 或运行`conda env create -f PhotoSketch_environment.yml` 自动安装
 
 3. 一个装有图片的文件夹，命名为`raw`
 
