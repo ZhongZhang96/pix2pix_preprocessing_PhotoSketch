@@ -1,5 +1,7 @@
 # pix2pix_preporcessing_PhotoSketch
 
+本程序用于提取图像的轮廓并与原图片拼接，生成适用于Pixel2Pixel网络的训练数据。不同于Pixel2Pixel的原始代码，本程序使用的边缘检测算法是PhotoSketch而不是HED
+
 ## 准备工作
 1. 一个可以运行Pixel2Pixel的conda环境，要求见https://github.com/affinelayer/pix2pix-tensorflow
 
