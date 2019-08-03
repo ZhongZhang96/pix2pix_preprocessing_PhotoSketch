@@ -68,7 +68,7 @@ if __name__ == "__main__":
         oldname=input_path+i   # os.sep添加系统分隔符
         
         #设置新文件名
-        newname=output_path+str(n).zfill(3)+'.jpg'
+        newname=output_path+str(n)+'.jpg'
 
         if not transimg(oldname, newname):
             try:
